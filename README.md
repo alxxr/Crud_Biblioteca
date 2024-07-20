@@ -51,6 +51,8 @@ none
 
 ## Contribuyendo 🖇️
 
+✅ Tips BD: https://www.youtube.com/watch?v=Qn4o75UqeQk
+
 ChatGpt 🫣🤭
 
 ## Wiki 📖
