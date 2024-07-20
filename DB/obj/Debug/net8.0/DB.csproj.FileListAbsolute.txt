@@ -1,0 +1,14 @@
+/Users/user/RiderProjects/Crud_Biblioteca/DB/bin/Debug/net8.0/DB.deps.json
+/Users/user/RiderProjects/Crud_Biblioteca/DB/bin/Debug/net8.0/DB.runtimeconfig.json
+/Users/user/RiderProjects/Crud_Biblioteca/DB/bin/Debug/net8.0/DB.dll
+/Users/user/RiderProjects/Crud_Biblioteca/DB/bin/Debug/net8.0/DB.pdb
+/Users/user/RiderProjects/Crud_Biblioteca/DB/obj/Debug/net8.0/DB.csproj.AssemblyReference.cache
+/Users/user/RiderProjects/Crud_Biblioteca/DB/obj/Debug/net8.0/DB.GeneratedMSBuildEditorConfig.editorconfig
+/Users/user/RiderProjects/Crud_Biblioteca/DB/obj/Debug/net8.0/DB.AssemblyInfoInputs.cache
+/Users/user/RiderProjects/Crud_Biblioteca/DB/obj/Debug/net8.0/DB.AssemblyInfo.cs
+/Users/user/RiderProjects/Crud_Biblioteca/DB/obj/Debug/net8.0/DB.csproj.CoreCompileInputs.cache
+/Users/user/RiderProjects/Crud_Biblioteca/DB/obj/Debug/net8.0/DB.dll
+/Users/user/RiderProjects/Crud_Biblioteca/DB/obj/Debug/net8.0/refint/DB.dll
+/Users/user/RiderProjects/Crud_Biblioteca/DB/obj/Debug/net8.0/DB.pdb
+/Users/user/RiderProjects/Crud_Biblioteca/DB/obj/Debug/net8.0/DB.genruntimeconfig.cache
+/Users/user/RiderProjects/Crud_Biblioteca/DB/obj/Debug/net8.0/ref/DB.dll

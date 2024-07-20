@@ -1,0 +1,57 @@
+@page "/books/autorId/{booksXIdAutor:int}"
+
+@using BlazorCrud.Client.DataAccess.Interface
+@using BlazorCrud.Shared;
+
+@inject IBookService BookService;
+
+<h3>Books</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nombre Libro</th>
+        <th>Nombre Autor</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @if(_listaBooks == null)
+    {
+
+        <tr>
+            <td colspan="5" align="center">
+                <img style="width:50px" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" />
+            </td>
+        </tr>
+    }
+    else
+    {
+        @foreach(var item in _listaBooks)
+        {
+            <tr>
+                <td>@item.Titulo</td>
+                <td>@item.Autor.Nombre</td>
+            </tr>
+        }
+    }
+
+
+
+    </tbody>
+</table>
+
+<a class="btn btn-warning" href="autores">Volver</a>
+<a class="btn btn-success btn-sm mb-3" href="book/@booksXIdAutor">Nuevo Book</a>
+
+@code {
+    [Parameter] public int booksXIdAutor { get; set; } = 0;
+    
+    List<BookDto>? _listaBooks = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _listaBooks = await BookService.BuscarXAutorId(booksXIdAutor);
+    }
+}

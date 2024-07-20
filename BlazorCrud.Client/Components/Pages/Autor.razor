@@ -1,0 +1,128 @@
+@page "/autor"
+@page "/autor/editar/{idAutorEditar:int}"
+@page "/autor/eliminar/{idAutorEliminar:int}"
+
+@rendermode InteractiveServer
+@using BlazorCrud.Client.DataAccess.Interface
+@using BlazorCrud.Shared;
+@using CurrieTechnologies.Razor.SweetAlert2;
+
+@inject SweetAlertService SAlert;
+@inject IAutorService AutorService;
+@inject NavigationManager Navegacion;
+
+
+<h3>@titulo</h3>
+
+<EditForm Model="_autor" OnValidSubmit="OnValidSubmit" FormName="formAutor">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+
+    <div class="mb-3">
+        <label class="form-label">Nombre Completo</label>
+        <InputText class="form-control" @bind-Value="_autor.Nombre"/>
+        <ValidationMessage For="@(() => _autor.Nombre)"></ValidationMessage>
+    </div>
+
+    <button class="btn btn-primary" type="submit">
+        @btnTexto
+    </button>
+    
+    <a class="btn btn-warning" href="autores">Volver</a>
+</EditForm>
+
+@code {
+    [Parameter] public int idAutorEditar { get; set; } = 0;
+    [Parameter] public int idAutorEliminar { get; set; } = 0;
+
+    string titulo = string.Empty;
+    string btnTexto = string.Empty;
+    private AutorDto _autor = new AutorDto(); 
+    List<AutorDto>? _listaAutores = null;
+    
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (idAutorEliminar != 0)
+        {
+            _autor = await AutorService.Buscar(idAutorEliminar);
+            btnTexto = "Eliminar";
+            titulo = "Eliminar Autor";
+        }
+        else
+        {
+            if (idAutorEditar != 0)
+            {
+                _autor = await AutorService.Buscar(idAutorEditar);
+                btnTexto = "Actualizar Autor";
+                titulo = "Editar Autor";
+            }
+            else
+            {
+                btnTexto = "Guardar Autor";
+                titulo = "Nuevo Autor";
+            }
+        }
+    }
+
+    private async Task OnValidSubmit()
+    {
+        int idDevuelto = 0;
+        if (idAutorEliminar != 0)
+        {
+            idDevuelto = await  AutorService.Eliminar(_autor.Id) == true ? 1 : 0;
+            
+            if (idDevuelto != 0)
+            {
+                Navegacion.NavigateTo("/autores");
+            }
+        }
+        else
+        {
+            if (idAutorEditar == 0)
+            {
+                idDevuelto = await AutorService.Guardar(_autor);
+            }
+            else
+            {
+                idDevuelto = await AutorService.Editar(_autor);
+            }
+            
+            
+            if (idDevuelto != 0)
+            {
+                Navegacion.NavigateTo("/autores");
+            }
+        }
+        
+        if (idDevuelto != 0)
+        {
+            Navegacion.NavigateTo("/autores");
+        }
+        
+    }
+    
+    // private async Task Eliminar(int id)
+    // {
+    //     var resultado = await SAlert.FireAsync(new SweetAlertOptions
+    //     {
+    //         Title = "Eliminar el Autor",
+    //         Text = "Deseas eliminar el autor?",
+    //         Icon = SweetAlertIcon.Question,
+    //         ShowCancelButton = true
+    //     });
+    //
+    //     if (resultado.IsConfirmed)
+    //     {
+    //         var eliminado = await AutorService.Eliminar(id);
+    //
+    //         if (eliminado)
+    //             _listaAutores = _listaAutores!.FindAll(e => e.Id != id);
+    //
+    //     }
+    //
+    //     return _listaAutores;
+    //
+    //
+    // }
+
+}

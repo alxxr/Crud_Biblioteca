@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Client/obj/Debug/net8.0/scopedcss/projectbundle/BlazorCrud.Client.bundle.scp.css",
+      "PackagePath": "staticwebassets/BlazorCrud.Client.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Client/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Client/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Client/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Client/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.BlazorCrud.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.BlazorCrud.Client.props",
+      "PackagePath": "build\\BlazorCrud.Client.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.BlazorCrud.Client.props",
+      "PackagePath": "buildMultiTargeting\\BlazorCrud.Client.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.BlazorCrud.Client.props",
+      "PackagePath": "buildTransitive\\BlazorCrud.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

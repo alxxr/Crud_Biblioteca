@@ -1,0 +1,11 @@
+/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Shared/bin/Debug/net8.0/BlazorCrud.Shared.deps.json
+/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Shared/bin/Debug/net8.0/BlazorCrud.Shared.dll
+/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Shared/bin/Debug/net8.0/BlazorCrud.Shared.pdb
+/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Shared/obj/Debug/net8.0/BlazorCrud.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Shared/obj/Debug/net8.0/BlazorCrud.Shared.AssemblyInfoInputs.cache
+/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Shared/obj/Debug/net8.0/BlazorCrud.Shared.AssemblyInfo.cs
+/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Shared/obj/Debug/net8.0/BlazorCrud.Shared.csproj.CoreCompileInputs.cache
+/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Shared/obj/Debug/net8.0/BlazorCrud.Shared.dll
+/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Shared/obj/Debug/net8.0/refint/BlazorCrud.Shared.dll
+/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Shared/obj/Debug/net8.0/BlazorCrud.Shared.pdb
+/Users/user/RiderProjects/Crud_Biblioteca/BlazorCrud.Shared/obj/Debug/net8.0/ref/BlazorCrud.Shared.dll

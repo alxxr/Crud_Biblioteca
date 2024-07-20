@@ -1,0 +1,68 @@
+@page "/book/{idAutorActual:int}"
+
+@rendermode InteractiveServer
+@using BlazorCrud.Client.DataAccess.Interface
+@using BlazorCrud.Shared;
+
+
+@inject IBookService BookService;
+@inject IAutorService AutorService;
+@inject NavigationManager Navegacion;
+
+
+<h3>@titulo</h3>
+
+<EditForm Model="_book" OnValidSubmit="OnValidSubmit" FormName="formBook">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <InputText class="form-control" @bind-Value="_book.Titulo"/>
+        <ValidationMessage For="@(() => _book.Titulo)"></ValidationMessage>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Autor</label>
+        <InputSelect class="form-select" @bind-Value="_book.AutorId">
+            <option value="0">-- Seleccionar --</option>
+            <option value="@_autor.Id">@_autor.Nombre</option>
+        </InputSelect>
+        <ValidationMessage For="@(() => _book.AutorId)"></ValidationMessage>
+    </div>
+
+    <button class="btn btn-primary" type="submit">
+        @btnTexto
+    </button>
+
+    <a class="btn btn-warning" href="books/autorId/@idAutorActual">Volver</a>
+</EditForm>
+
+@code {
+    [Parameter] public int idAutorActual { get; set; } = 0;
+
+
+    string titulo = string.Empty;
+    string btnTexto = string.Empty;
+    private BookDto _book = new BookDto();
+    private AutorDto _autor = new AutorDto();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        _autor = await AutorService.Buscar(idAutorActual);
+        btnTexto = "Guardar Book";
+        titulo = "Nuevo Book";
+    }
+
+    private async Task OnValidSubmit()
+    {
+        int idDevuelto = 0;
+        idDevuelto = await BookService.GuardarBook(_book);
+
+        if (idDevuelto != 0)
+        {
+            Navegacion.NavigateTo("books/autorId/@idAutorActual");
+        }
+    }
+
+}

@@ -1,0 +1,65 @@
+@page "/autores"
+
+@using BlazorCrud.Client.DataAccess.Interface
+@using BlazorCrud.Shared;
+
+@inject IAutorService AutorService;
+
+<h3>Autores</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nombre Completo</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @if(_listaAutores == null)
+    {
+
+        <tr>
+            <td colspan="5" align="center">
+                <img style="width:50px" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" />
+            </td>
+        </tr>
+    }
+    else
+    {
+        @foreach(var item in _listaAutores)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td style="display: flex;justify-content: flex-end; gap: 8px">
+                    <a class="btn btn-primary btn-sm" href="books/autorId/@item.Id">
+                        <i class="oi oi-trash">Books</i>
+                    </a>
+                    
+                    <a class="btn btn-success btn-sm" href="autor/editar/@item.Id">
+                        <i class="oi oi-pencil">Editar</i>
+                    </a>
+
+                    <a class="btn btn-danger btn-sm" href="autor/eliminar/@item.Id">
+                        <i class="oi oi-trash">Eliminar</i>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+
+
+
+    </tbody>
+</table>
+
+@* <a class="btn btn-success btn-sm mb-3" href="autor">Nuevo Autor</a> *@
+
+@code {
+    List<AutorDto>? _listaAutores = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _listaAutores = await AutorService.Lista_Autores();
+    }
+}
