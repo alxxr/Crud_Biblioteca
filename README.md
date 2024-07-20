@@ -47,6 +47,7 @@ none
 * [JetBrains Raider](https://www.jetbrains.com/rider/) - IDE
 * [DataGrid](https://www.jetbrains.com/datagrip/) - BD
 * [.Net 8.0]([https://rometools.github.io/rome/](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)) - El framework web usado
+* [Sweetalert2](https://github.com/Basaingeal/Razor.SweetAlert2) - Alert
 
 ## Contribuyendo 🖇️
 
